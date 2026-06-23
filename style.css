@@ -1,0 +1,280 @@
+/* ===== SpaceOS VR ===== */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    background: #080b1a;
+}
+
+/* Algemene vensters */
+.window {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    box-shadow:
+        0 0 30px rgba(255,255,255,0.1),
+        0 0 60px rgba(0,150,255,0.1);
+}
+
+/* Dock */
+.dock {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 15px;
+
+    padding: 15px;
+
+    background: rgba(255,255,255,0.08);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Icoontjes */
+
+.icon {
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+
+    transition: .3s;
+
+    cursor: pointer;
+}
+
+/* Hover effect */
+
+.icon:hover {
+
+    transform: scale(1.15);
+
+    box-shadow:
+        0 0 20px #00aaff,
+        0 0 40px #00aaff;
+
+}
+
+/* Tekst */
+
+.title {
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+}
+
+/* Zwevende animatie */
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0px);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+    100% {
+
+        transform: translateY(0px);
+
+    }
+
+}
+
+.floating {
+
+    animation: float 4s infinite ease-in-out;
+
+}
+
+/* Gloed */
+
+.glow {
+
+    box-shadow:
+
+    0 0 25px rgba(0,180,255,0.5),
+
+    0 0 50px rgba(0,180,255,0.3);
+
+}
+
+/* Open animatie */
+
+@keyframes openWindow {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.7);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+.open {
+
+    animation: openWindow .4s ease;
+
+}
+
+/* Sluit animatie */
+
+@keyframes closeWindow {
+
+    from {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform: scale(.7);
+
+    }
+
+}
+
+.close {
+
+    animation: closeWindow .3s ease;
+
+}
+
+/* Achtergrond kleuren */
+
+.space {
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #050816,
+
+        #101830,
+
+        #081120
+
+    );
+
+}
+
+/* Transparantie */
+
+.glass {
+
+    background: rgba(255,255,255,.07);
+
+    backdrop-filter: blur(35px);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: rgba(255,255,255,.3);
+
+    border-radius: 20px;
+
+}
+
+/* Knoppen */
+
+.button {
+
+    background: rgba(255,255,255,.1);
+
+    border: none;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 15px;
+
+    transition: .3s;
+
+}
+
+.button:hover {
+
+    background: rgba(255,255,255,.2);
+
+    box-shadow:
+
+    0 0 20px cyan;
+
+}
+
+/* Opstart animatie */
+
+@keyframes boot {
+
+    0% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+    }
+
+}
+
+.boot {
+
+    animation: boot 2s ease;
+
+}
